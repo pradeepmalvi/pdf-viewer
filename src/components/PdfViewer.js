@@ -27,10 +27,7 @@ const PdfViewer = () => {
     });
   }
 
-  <Page />;
-
   const uploadPdf = (e) => {
-    console.log(e.target.files[0]);
     setPdf(e.target.files[0]);
   };
 
@@ -51,6 +48,9 @@ const PdfViewer = () => {
                 Page {pageNumber} of {numPages}
               </p>
             </div>{" "}
+            <button onClick={() => setPageNumber(pageNumber - 1)}>
+              Prev page
+            </button>
             <button onClick={() => setPageNumber(pageNumber + 1)}>
               Next page
             </button>
